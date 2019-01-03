@@ -124,9 +124,6 @@ GameObject:
   - component: {fileID: 117444293}
   - component: {fileID: 117444297}
   - component: {fileID: 117444292}
-  - component: {fileID: 117444295}
-  - component: {fileID: 117444296}
-  - component: {fileID: 117444298}
   m_Layer: 0
   m_Name: Triangle
   m_TagString: Untagged
@@ -141,9 +138,9 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 117444291}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca072c742445f9b4f88b1e52d73a87b7, type: 3}
+  m_Script: {fileID: 11500000, guid: 84b59a8fc8eb4bc49b8968ef5e3371ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   verticalInputAcceleration: 1
@@ -190,7 +187,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8599f70dfe1176c4394fc3c3d1dcaf68, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b125be14237dc4846b7569559e4808ab, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -215,34 +212,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &117444295
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 117444291}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7720faecceb894342acfa2234fd80431, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &117444296
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 117444291}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb3e5659fd599034ba948ef6cce3780c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 240597215}
-  rigidBody: {fileID: 117444297}
-  angleChangingSpeed: 10
-  movementSpeed: 1
 --- !u!50 &117444297
 Rigidbody2D:
   serializedVersion: 4
@@ -264,22 +233,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &117444298
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 117444291}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5337810d6dbdef14295c26fbc62770f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxForce: 10
-  forceMultiplier: 100
-  relativeForce: {x: 0, y: 0}
-  rotation: 0
 --- !u!1 &240597213
 GameObject:
   m_ObjectHideFlags: 0
@@ -342,7 +295,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &240597215
