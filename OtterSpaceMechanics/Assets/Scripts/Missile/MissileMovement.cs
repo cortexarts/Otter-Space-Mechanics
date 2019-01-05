@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class MissileMovement : MonoBehaviour
 {
-    public float missileSpeed;
-    public float missileTilt;
+    [SerializeField]
+    private float movementSpeed;
 
     private Rigidbody2D rigidbody2d;
 
@@ -27,9 +27,8 @@ public class MissileMovement : MonoBehaviour
     }
 
     // FixedUpdate is called every fixed frame-rate frame
-    void FixedUpdate()
+    void FixedUpdate() 
     {
-        rigidbody2d.velocity = Vector2.up * missileSpeed * Time.fixedDeltaTime;
-        rigidbody2d.rotation = rigidbody2d.velocity.x * -missileTilt;
+        rigidbody2d.AddRelativeForce(Vector2.up * movementSpeed * Time.fixedDeltaTime);
     }
 }

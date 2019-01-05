@@ -14,7 +14,15 @@ public class PlayerShooting : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (homingMissile == null)
+        {
+            Debug.LogWarning("No homing missile found!");
+        }
 
+        if (missile == null)
+        {
+            Debug.LogWarning("No missile found!");
+        }
     }
 
     // Update is called once per frame
@@ -30,8 +38,7 @@ public class PlayerShooting : MonoBehaviour
         {
             delay = Time.time + fireRate;
             Instantiate(homingMissile, missileSpawn.position, missileSpawn.rotation);
-            HomingMissileMovement homingMissileMovement = homingMissile.GetComponent<HomingMissileMovement>();
-            homingMissileMovement.target = GameObject.Find("Target").transform;
+            homingMissile.GetComponent<HomingMissileMovement>().target = GameObject.Find("Target").transform;
         }
     }
 }

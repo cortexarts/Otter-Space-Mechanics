@@ -5,8 +5,11 @@ using UnityEngine;
 public class HomingMissileMovement : MonoBehaviour
 {
     public Transform target;
-    public float angleChangingSpeed;
-    public float movementSpeed;
+
+    [SerializeField]
+    private float angleChangingSpeed;
+    [SerializeField]
+    private float movementSpeed;
 
     private Rigidbody2D rigidbody2d;
 
@@ -32,7 +35,7 @@ public class HomingMissileMovement : MonoBehaviour
     {
         if (target == null)
         {
-            Debug.LogWarning("No target found!");
+            Debug.Log("No target found!");
             return;
         }
 
