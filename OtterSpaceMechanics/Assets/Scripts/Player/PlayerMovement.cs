@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Test4 : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
     [SerializeField]
     private float maxForce = 10.0f;
@@ -38,6 +38,7 @@ public class Test4 : MonoBehaviour
         verticalInput = Input.GetAxis("Vertical");
     }
 
+    // FixedUpdate is called every fixed frame-rate frame
     private void FixedUpdate()
     {
         relativeForce.y = verticalInput * forceMultiplier * Time.fixedDeltaTime;
