@@ -8,6 +8,8 @@ public class TilingBackground : MonoBehaviour
     public int offsetY = 2; // the offset so that we don't get any weird errors
 
     // this are used for checking if we need to instantiate stuff
+    public TileManager tileManager;
+    public int tileIndex = 0;
     public bool hasARightBuddy = false;
     public bool hasALeftBuddy = false;
 
@@ -23,6 +25,12 @@ public class TilingBackground : MonoBehaviour
     {
         cam = Camera.main;
         myTransform = transform;
+        tileManager = transform.parent.gameObject.GetComponent<TileManager>();
+
+        if (!tileManager)
+        {
+            Debug.LogWarning("No tile manager found!");
+        }
     }
 
     // Use this for initialization
@@ -132,6 +140,14 @@ public class TilingBackground : MonoBehaviour
             newBuddy.GetComponent<TilingBackground>().hasATopBuddy = true;
 
             newBuddy.parent = myTransform.parent;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            tileManager.SetCurrentTileIndex(tileIndex);
         }
     }
 }
