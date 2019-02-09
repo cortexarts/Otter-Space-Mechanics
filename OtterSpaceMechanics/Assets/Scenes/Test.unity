@@ -14464,7 +14464,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 886207419}
-  - component: {fileID: 886207420}
   m_Layer: 0
   m_Name: HazeTiles
   m_TagString: Untagged
@@ -14487,19 +14486,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &886207420
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 886207418}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52402f8b3a3a659428021e864cbf2eb9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  layers: []
 --- !u!1 &1125797540
 GameObject:
   m_ObjectHideFlags: 0
@@ -29025,6 +29011,11 @@ PrefabInstance:
     - target: {fileID: 1929674768272873738, guid: 808483c26f20c47489ee7483715cb289,
         type: 3}
       propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 1929674768272873738, guid: 808483c26f20c47489ee7483715cb289,
+        type: 3}
+      propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 1929674768272873743, guid: 808483c26f20c47489ee7483715cb289,
