@@ -38,7 +38,7 @@ public class PlayerShooting : MonoBehaviour
         {
             delay = Time.time + fireRate;
             Instantiate(homingMissile, missileSpawn.position, missileSpawn.rotation);
-            homingMissile.GetComponent<HomingMissileMovement>().target = GameObject.Find("Target").transform;
+            homingMissile.GetComponent<HomingMissileMovement>().SetTarget(GameObject.Find("Target").transform);
         }
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class MissileMovement : MonoBehaviour
 {
     [SerializeField]
-    private float movementSpeed;
+    private float movementSpeed = 1;
 
     private Rigidbody2D rigidbody2d;
 

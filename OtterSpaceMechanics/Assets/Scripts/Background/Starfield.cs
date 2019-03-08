@@ -13,7 +13,7 @@ public class Starfield : MonoBehaviour
     public float fieldHeight = 25f;
     public bool colorize = false;
 
-    private ParticleSystem particleSystem;
+    private ParticleSystem m_particleSystem;
     private ParticleSystem.Particle[] stars;
     private Transform mainCameraTransform;
     private float xOffset;
@@ -23,9 +23,9 @@ public class Starfield : MonoBehaviour
     void Awake()
     {
         stars = new ParticleSystem.Particle[MaxStars];
-        particleSystem = GetComponent<ParticleSystem>();
+        m_particleSystem = GetComponent<ParticleSystem>();
 
-        Assert.IsNotNull(particleSystem, "Particle system missing from object!");
+        Assert.IsNotNull(m_particleSystem, "Particle system missing from object!");
 
         xOffset = fieldWidth * 0.5f; // Offset the coordinates to distribute the spread
         yOffset = fieldHeight * 0.5f; // around the object's center
@@ -40,7 +40,7 @@ public class Starfield : MonoBehaviour
             stars[i].startColor = new Color(1f, scaledColor, scaledColor, 1f);
         }
 
-        particleSystem.SetParticles(stars, stars.Length); // Write data to the particle system
+        m_particleSystem.SetParticles(stars, stars.Length); // Write data to the particle system
     }
 
     // Start is called before the first frame update
@@ -77,7 +77,7 @@ public class Starfield : MonoBehaviour
             stars[i].position = pos - transform.position;
         }
 
-        particleSystem.SetParticles(stars, stars.Length);
+        m_particleSystem.SetParticles(stars, stars.Length);
 
         Vector3 newPos = mainCameraTransform.position * parallaxFactor; // Calculate the position of the object
         newPos.z = 0; // Force Z-axis to zero, since we're in 2D

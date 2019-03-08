@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class HomingMissileMovement : MonoBehaviour
 {
-    public Transform target;
-
     [SerializeField]
-    private float angleChangingSpeed;
+    private Transform target;
     [SerializeField]
-    private float movementSpeed;
+    private float angleChangingSpeed = 1;
+    [SerializeField]
+    private float movementSpeed = 1;
 
     private Rigidbody2D rigidbody2d;
 
@@ -44,5 +44,10 @@ public class HomingMissileMovement : MonoBehaviour
         float rotateAmount = Vector3.Cross(direction, transform.up).z;
         rigidbody2d.angularVelocity = -angleChangingSpeed * rotateAmount;
         rigidbody2d.velocity = transform.up * movementSpeed * Time.fixedDeltaTime;
+    }
+
+    public void SetTarget(Transform targetTransform)
+    {
+        target = targetTransform;
     }
 }
